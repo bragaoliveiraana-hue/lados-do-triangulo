@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Programa Lados de um Triângulo</title>
+</head>
+
+<body>
+<img src="triangulo.webp" alt="">
+<h1>Programa Lados de um Triângulo</h1>
+
+<label>Lado A:</label>
+<input type="number" id="a"><br><br>
+
+<label>Lado B:</label>
+<input type="number" id="b"><br><br>
+
+<label>Lado C:</label>
+<input type="number" id="c"><br><br>
+
+<button onclick="verificar()">Verificar Lados</button>
+
+<h3 id="resultado"></h3>
+
+<script>
+
+function verificar() {
+
+    let a = Number(document.getElementById("a").value);
+    let b = Number(document.getElementById("b").value);
+    let c = Number(document.getElementById("c").value);
+
+    let resultado = document.getElementById("resultado");
+
+    // Verifica se forma triângulo
+    if (a < b + c && b < a + c && c < a + b) {
+
+        // Tipo do triângulo
+        if (a == b && b == c) {
+            resultado.innerHTML = "Forma um triângulo EQUILÁTERO";
+        }
+        else if (a == b || a == c || b == c) {
+            resultado.innerHTML = "Forma um triângulo ISÓSCELES";
+        }
+        else {
+            resultado.innerHTML = "Forma um triângulo ESCALENO";
+        }
+
+    } else {
+        resultado.innerHTML = "Os lados NÃO formam um triângulo";
+    }
+
+}
+
+</script>
+
+</body>
+</html>
